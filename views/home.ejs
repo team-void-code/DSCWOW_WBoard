@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WBoard Home Page</title>
+</head>
+
+<body>
+    <h1>Home Page Under Dev</h1>
+    <h1 id="username"></h1>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCkVNy6THFaMxgQKiT7RGEIPqdyBJnXVVM",
+    authDomain: "wboard-605c1.firebaseapp.com",
+    projectId: "wboard-605c1",
+    storageBucket: "wboard-605c1.appspot.com",
+    messagingSenderId: "651015846008",
+    appId: "1:651015846008:web:b92b361d1b7212de31558d",
+    measurementId: "G-HEM8Z819S2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            var uid = user.uid;
+            
+            document.querySelector("#username").innerHTML= `Welcome ${user.displayName}`;
+            
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            location.replace("/");
+        }
+    });
+</script>
+
+</html>
