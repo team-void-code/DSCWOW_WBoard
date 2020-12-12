@@ -17,4 +17,8 @@
  - Open the project in an IDE and run the following commands.
  - ```npm install```
  - ```npm start```
+<<<<<<< HEAD
  - Now open your favourite browser and run _localhost:4100_
+=======
+ - Now open your favourite browser and run _localhost:4100_
+>>>>>>> af34cbd3e60cf62ad88a14613b04447f168d0f4d
