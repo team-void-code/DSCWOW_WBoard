@@ -1,8 +1,10 @@
 feather.replace();
+new WOW().init();
 
 const options = {
     editMode: false,
-    paintColor: "tomato",
+    paintColor: "#ff6347",
+    thickness: 2,
 };
 
 const mainBoard = new WhiteBoard((canvas) => {
@@ -16,7 +18,7 @@ const mainBoard = new WhiteBoard((canvas) => {
 }, options);
 
 const setDrawOption = (option, uiItem) => {
-    if(!uiItem.classList.contains("selected")){
+    if (!uiItem.classList.contains("selected")) {
         document.querySelectorAll("svg[data-whiteboard-option]").forEach(elem => {
             elem.classList.remove("selected");
         });
@@ -33,15 +35,73 @@ const setDrawOption = (option, uiItem) => {
         case "edit":
             options.editMode = true;
             break;
+        case "color":
+            $("#colorPaletteModal").modal("show");
+            setTimeout(() => {
+                document.querySelector("input").click();
+            }, 500);
+            break;
+        case "thick":
+            $("#markerThicknessModal").modal("show");
+            break;
         default:
             break;
     }
 }
 
+const changeMarkerThickness = (thickness) => {
+    document.querySelector("#markerThickness").innerHTML = thickness;
+    options.thickness = Number(thickness);
+}
 
+const changePaintColor = (color) => {
+    options.paintColor = color;
+}
 
 // window.onload = () => {
-    document.querySelectorAll("img").forEach(elem => {
-        elem.src = "/images/loading.gif";
-    });
+
 // }
+
+const participantTemplate = `<!-- Card Wider -->
+<div class="card card-cascade wider mb-4">
+
+    <!-- Card image -->
+    <div class="view view-cascade overlay zoom">
+        <img class="card-img-top"
+            src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
+            alt="Card image cap">
+        <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade text-center">
+
+        <!-- Title -->
+        <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
+        <!-- Subtitle -->
+        <h5 class="pb-2 hostText"><strong>Host</strong></h5>
+        <!-- Text -->
+        <p class="card-text"></p>
+
+        <!-- Linkedin -->
+        <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
+        <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
+        <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
+        <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
+        <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
+
+    </div>
+
+</div>
+<!-- Card Wider -->`;
+
+for(let i in [...Array(5)]){
+    document.querySelector("#participantCards").innerHTML += participantTemplate;
+}
+
+
+document.querySelectorAll("img").forEach(elem => {
+    elem.src = "/images/loading.gif";
+});

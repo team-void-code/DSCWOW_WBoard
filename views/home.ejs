@@ -9,7 +9,14 @@
 
 <body>
     <h1>Home Page Under Dev</h1>
-    <h1 id="username"></h1>
+    <section id="loggedIn" style="display:none">
+        <h1 id="username"></h1><br>
+        <button onclick="location.href = '/board';">Go to board</button><br>
+        <button onclick="firebase.auth().signOut()">Logout</button>
+    </section>
+    <section id="loggedOut" style="display:none">
+        <button onclick="login()">Login</button>
+    </section>
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
@@ -20,20 +27,20 @@
 <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
 
 <script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyCkVNy6THFaMxgQKiT7RGEIPqdyBJnXVVM",
-    authDomain: "wboard-605c1.firebaseapp.com",
-    projectId: "wboard-605c1",
-    storageBucket: "wboard-605c1.appspot.com",
-    messagingSenderId: "651015846008",
-    appId: "1:651015846008:web:b92b361d1b7212de31558d",
-    measurementId: "G-HEM8Z819S2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCkVNy6THFaMxgQKiT7RGEIPqdyBJnXVVM",
+        authDomain: "wboard-605c1.firebaseapp.com",
+        projectId: "wboard-605c1",
+        storageBucket: "wboard-605c1.appspot.com",
+        messagingSenderId: "651015846008",
+        appId: "1:651015846008:web:b92b361d1b7212de31558d",
+        measurementId: "G-HEM8Z819S2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 </script>
 <script>
     firebase.auth().onAuthStateChanged((user) => {
@@ -41,16 +48,19 @@
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/firebase.User
             var uid = user.uid;
-            
-            document.querySelector("#username").innerHTML= `Welcome ${user.displayName}`;
-            
+
+            document.querySelector("#username").innerHTML = `Welcome ${user.displayName}`;
+            document.querySelector("#loggedIn").style.display = "block";
+            document.querySelector("#loggedOut").style.display = "none";
+
             // ...
         } else {
             // User is signed out
             // ...
-            location.replace("/");
+            document.querySelector("#loggedIn").style.display = "none";
+            document.querySelector("#loggedOut").style.display = "block";
         }
     });
 </script>
-
+<script src="/js/auth.js"></script>
 </html>

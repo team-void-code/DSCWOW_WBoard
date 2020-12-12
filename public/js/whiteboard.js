@@ -21,7 +21,7 @@ class WhiteBoard {
             ctx.moveTo(prevX, prevY);
             ctx.lineTo(currX, currY);
             ctx.strokeStyle = optionsObject.paintColor;
-            ctx.lineWidth = y;
+            ctx.lineWidth = optionsObject.thickness;
             ctx.stroke();
             ctx.closePath();
             if(onPaint) onPaint();

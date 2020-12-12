@@ -10,9 +10,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900">
     <!-- Bootstrap core CSS -->
-    <link href="https://missionrj.in/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="https://missionrj.in/css/mdb.min.css" rel="stylesheet">
+    <link href="/lib/css/mdb.css" rel="stylesheet">
     <title>Testing</title>
     <style>
         html,
@@ -33,7 +33,7 @@
     <header></header>
     <center>
         <main>
-            <section id="editItems">
+            <section id="editItems" class="animated-elevation">
                 <i data-feather="home" class="animate__animated animate__zoomIn"></i>
                 <br>
                 <i data-whiteboard-option data-feather="mouse-pointer"
@@ -42,235 +42,71 @@
                     onclick="setDrawOption('edit',this)"></i>
                 <i data-whiteboard-option data-feather="chrome" class="animate__animated animate__bounceIn"
                     onclick="setDrawOption('color',this)"></i>
+                <i data-whiteboard-option data-feather="feather" class="animate__animated animate__bounceIn"
+                    onclick="setDrawOption('thick',this)"></i>
                 <br>
                 <i data-feather="power" style="color: red;"></i>
             </section>
             <section id="canvasImage">
                 <center>
-                    <div id="canvasContainer"></div>
+                    <div id="canvasContainer" class="animated-elevation"></div>
                 </center>
             </section>
-            <section id="otherParticipants">
+            <section id="otherParticipants" class="animated-elevation">
 
-                <div class="animate__animated animate__fadeInUp">
+                <div class="animate__animated animate__fadeInUp" id="participantCards">
                     <br><br>
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <h5 class="pb-2 hostText"><strong>Host</strong></h5>
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <!-- <h5 class="pb-2 hostText"><strong>Host</strong></h5> -->
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <!-- <h5 class="pb-2 hostText"><strong>Host</strong></h5> -->
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <!-- <h5 class="pb-2 hostText"><strong>Host</strong></h5> -->
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <!-- <h5 class="pb-2 hostText"><strong>Host</strong></h5> -->
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
-                    <!-- Card Wider -->
-                    <div class="card card-cascade wider mb-4">
-
-                        <!-- Card image -->
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top"
-                                src="https://expertphotography.com/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg"
-                                alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong style="font-weight: 300;">Ashhar Ali</strong></h4>
-                            <!-- Subtitle -->
-                            <!-- <h5 class="pb-2 hostText"><strong>Host</strong></h5> -->
-                            <!-- Text -->
-                            <p class="card-text"></p>
-
-                            <!-- Linkedin -->
-                            <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                            <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                            <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                            <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                        </div>
-
-                    </div>
-                    <!-- Card Wider -->
+                    
                 </div>
             </section>
         </main>
     </center>
-    <footer></footer>
+    <section>
+        <!-- Modal -->
+        <div class="modal fade" id="colorPaletteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pick Color</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="color" style="width: 100%;" value="#ff6347" onchange="changePaintColor(this.value);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="markerThicknessModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pen Thickness</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="range-field my-4 w-100">
+                            <input type="range" step="0.1" style = "width: 100%;" min="1" max="10" value = "2" oninput="document.querySelector('#markerThickness').innerHTML = this.value;" onchange="changeMarkerThickness(this.value)"/>
+                            <p>Thickness : <span id="markerThickness">2</span></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-<script type="text/javascript" src="https://missionrj.in/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/lib/js/jquery-3.4.1.min.js"></script>
 <!--  Bootstrap tooltips  -->
-<script type="text/javascript" src="https://missionrj.in/js/popper.min.js"></script>
+<script type="text/javascript" src="/lib/js/popper.min.js"></script>
 <!--  Bootstrap core JavaScript  -->
-<script type="text/javascript" src="https://missionrj.in/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
 <!--  MDB core JavaScript  -->
-<script type="text/javascript" src="https://missionrj.in/js/mdb.min.js"></script>
+<script type="text/javascript" src="/lib/js/mdb.js"></script>
 <script src="/js/whiteboard.js"></script>
 <script src="/js/test.js"></script>
 
