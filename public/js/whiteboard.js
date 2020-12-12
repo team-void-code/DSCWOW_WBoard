@@ -3,7 +3,7 @@ class WhiteBoard {
      * 
      * @param {Function} onCreate
      */
-    constructor(onCreate,onPaint,onPaintEnd,optionsObject) {
+    constructor(onCreate, onPaint, onPaintEnd, optionsObject) {
         const canvas = document.createElement("canvas");
         let painting = false;
         let prevX = 0,
@@ -24,7 +24,7 @@ class WhiteBoard {
             ctx.lineWidth = optionsObject.thickness;
             ctx.stroke();
             ctx.closePath();
-            if(onPaint) onPaint();
+            if (onPaint) onPaint();
         }
 
         function findxy(res, e) {
@@ -46,7 +46,7 @@ class WhiteBoard {
             }
             if (res == 'up' || res == "out") {
                 painting = false;
-                if(onPaintEnd && optionsObject.editMode) onPaintEnd();
+                if (onPaintEnd && optionsObject.editMode) onPaintEnd();
             }
             if (res == 'move') {
                 if (painting && optionsObject.editMode) {
@@ -54,6 +54,11 @@ class WhiteBoard {
                     prevY = currY;
                     currX = e.clientX - canvas.offsetLeft;
                     currY = e.clientY - canvas.offsetTop;
+                    if (optionsObject.erasing) {
+                        ctx.globalCompositeOperation = 'destination-out';
+                    } else {
+                        ctx.globalCompositeOperation = 'source-over';
+                    }
                     paint();
                 }
             }
@@ -72,6 +77,7 @@ class WhiteBoard {
         //     findxy('out', e)
         // }, false);
         this.board = canvas;
+        this.ctx = ctx;
     }
 
 }

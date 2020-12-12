@@ -5,6 +5,7 @@ const options = {
     editMode: false,
     paintColor: "#ff6347",
     thickness: 2,
+    erasing: false
 };
 
 const mainBoard = new WhiteBoard((canvas) => {
@@ -34,6 +35,10 @@ const setDrawOption = (option, uiItem) => {
             break;
         case "edit":
             options.editMode = true;
+            options.erasing = false;
+            break;
+        case "erase":
+            options.erasing = true;
             break;
         case "color":
             $("#colorPaletteModal").modal("show");
@@ -58,6 +63,15 @@ const changePaintColor = (color) => {
     options.paintColor = color;
 }
 
+const clearBoard = () => {
+    const m = confirm("Wanted to clear board?");
+    if (m) {
+        mainBoard.ctx.clearRect(0, 0, mainBoard.board.width, mainBoard.board.height);
+        document.querySelectorAll("img").forEach((e) => {
+            e.src = mainBoard.board.toDataURL();
+        });
+    }
+}
 // window.onload = () => {
 
 // }
@@ -97,7 +111,7 @@ const participantTemplate = `<!-- Card Wider -->
 </div>
 <!-- Card Wider -->`;
 
-for(let i in [...Array(5)]){
+for (let i in [...Array(5)]) {
     document.querySelector("#participantCards").innerHTML += participantTemplate;
 }
 
