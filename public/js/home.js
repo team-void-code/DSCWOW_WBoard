@@ -1,5 +1,6 @@
 feather.replace();
 new WOW().init();
+const db = firebase.database();
 
 const typeWrite = (txt,elem) => {
     var speed = 100;
@@ -15,5 +16,18 @@ const typeWrite = (txt,elem) => {
 }
 
 const createMeeting = () => {
-    location.href = "/waiting";
+    const meetingId = db.ref("/meetings").push().key;
+    db.ref(`/meetings/${meetingId}`).update({
+        createdBy : firebase.auth().currentUser.uid,
+        data : {}
+    }).then(()=>{
+        location.href = `/waiting/${meetingId}`;
+    });
+}
+
+const joinMeeting = () => {
+    const id = document.querySelector("#form1").value;
+    if(id.length > 0){
+        location.href = `/board/${id}`;
+    }
 }

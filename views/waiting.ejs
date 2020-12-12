@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,26 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900">
 </head>
+
 <body>
     <main>
         <h1 style="font-weight: 200;">Waiting room</h1>
-        <h4 style="color: gray;font-weight: 300;">Create or join a collaborated meeting</h4>
+        <h4 style="color: gray;font-weight: 300;">You can wait here for others to join</h4>
+        <br>
+        <div>Meeting Code &emsp;<span style="color: #EA72FF;padding: 20px;border: 2px solid #EA72FF;user-select:all;"><%= meetingId%></span></div>
+        <br>
+        <br>
+        <br>
         <center>
             <img src="/images/loading.gif" width="80%">
         </center>
-        <h4 style="color: gray;font-weight: 300;">1 Participant</h4>
-        <button onclick="location.href = '/board'">Continue to board</button>
+        <!-- <div>Meeting Link &emsp;<span style="color: #EA72FF;padding: 20px;border: 2px solid #EA72FF;user-select:all;" id="link"></span></div>
+        <br><br> -->
+        <button onclick="location.href = '/board/<%= meetingId%>'">Continue to board</button>
     </main>
 </body>
+<!-- <script>
+    const meetingId = "<%= meetingId%>";
+    document.querySelector("#link").innerHTML = window.location.origin + "/board/" + meetingId;
+</script> -->
 </html>

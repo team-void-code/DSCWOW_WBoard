@@ -1,0 +1,138 @@
+Date : 2020-12-12 23:59:17
+Directory : e:\random Projects 2\hackathons\WBoard
+Total : 97 files,  70327 codes, 20278 comments, 14133 blanks, all 104738 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         64 |     46,080 |     19,819 |     11,090 |     76,989 |
+| CSS        |         25 |     21,856 |        399 |      2,985 |     25,240 |
+| JSON       |          2 |      1,840 |          0 |          2 |      1,842 |
+| HTML       |          5 |        535 |         60 |         51 |        646 |
+| Markdown   |          1 |         16 |          0 |          5 |         21 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                          |         97 |     70,327 |     20,278 |     14,133 |    104,738 |
+| public                                                                                                     |         88 |     67,916 |     20,218 |     14,072 |    102,206 |
+| public\css                                                                                                 |          3 |        226 |         24 |         26 |        276 |
+| public\js                                                                                                  |          4 |        214 |         18 |         30 |        262 |
+| public\lib                                                                                                 |         81 |     67,476 |     20,176 |     14,016 |    101,668 |
+| public\lib\css                                                                                             |         22 |     21,630 |        375 |      2,959 |     24,964 |
+| public\lib\css\addons                                                                                      |         12 |      1,286 |         66 |         81 |      1,433 |
+| public\lib\css\addons-pro                                                                                  |          2 |        274 |          0 |         20 |        294 |
+| public\lib\css\modules                                                                                     |          2 |      2,111 |         22 |        199 |      2,332 |
+| public\lib\js                                                                                              |         59 |     45,846 |     19,801 |     11,057 |     76,704 |
+| public\lib\js\addons                                                                                       |         12 |      7,453 |      7,328 |      2,268 |     17,049 |
+| public\lib\js\modules                                                                                      |         41 |     27,216 |     10,712 |      6,341 |     44,269 |
+| public\lib\js\modules\addons                                                                               |         12 |      7,453 |      7,328 |      2,268 |     17,049 |
+| views                                                                                                      |          5 |        535 |         60 |         51 |        646 |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                   | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\random Projects 2\hackathons\WBoard\README.md                                                           | Markdown   |         16 |          0 |          5 |         21 |
+| e:\random Projects 2\hackathons\WBoard\app.js                                                              | JavaScript |         20 |          0 |          3 |         23 |
+| e:\random Projects 2\hackathons\WBoard\package-lock.json                                                   | JSON       |      1,815 |          0 |          1 |      1,816 |
+| e:\random Projects 2\hackathons\WBoard\package.json                                                        | JSON       |         25 |          0 |          1 |         26 |
+| e:\random Projects 2\hackathons\WBoard\public\css\home.css                                                 | CSS        |        104 |          9 |         11 |        124 |
+| e:\random Projects 2\hackathons\WBoard\public\css\test.css                                                 | CSS        |         96 |         15 |         13 |        124 |
+| e:\random Projects 2\hackathons\WBoard\public\css\waiting.css                                              | CSS        |         26 |          0 |          2 |         28 |
+| e:\random Projects 2\hackathons\WBoard\public\js\auth.js                                                   | JavaScript |         19 |          8 |          2 |         29 |
+| e:\random Projects 2\hackathons\WBoard\public\js\home.js                                                   | JavaScript |         16 |          0 |          3 |         19 |
+| e:\random Projects 2\hackathons\WBoard\public\js\test.js                                                   | JavaScript |        108 |          2 |         19 |        129 |
+| e:\random Projects 2\hackathons\WBoard\public\js\whiteboard.js                                             | JavaScript |         71 |          8 |          6 |         85 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons-pro\timeline.css                              | CSS        |        273 |          0 |         20 |        293 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons-pro\timeline.min.css                          | CSS        |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\datatables-select.css                         | CSS        |         71 |         16 |         23 |        110 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\datatables-select.min.css                     | CSS        |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\datatables.css                                | CSS        |        117 |         15 |         19 |        151 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\datatables.min.css                            | CSS        |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\directives.css                                | CSS        |         22 |          0 |         10 |         32 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\directives.min.css                            | CSS        |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\flag.css                                      | CSS        |      1,005 |         20 |         12 |      1,037 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\flag.min.css                                  | CSS        |          1 |          8 |          0 |          9 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\rating.css                                    | CSS        |         16 |          0 |          7 |         23 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\rating.min.css                                | CSS        |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\zmd.hierarchical-display.css                  | CSS        |         49 |          4 |         10 |         63 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\addons\zmd.hierarchical-display.min.css              | CSS        |          1 |          3 |          0 |          4 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\bootstrap.css                                        | CSS        |      8,832 |          7 |      1,199 |     10,038 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\bootstrap.min.css                                    | CSS        |          1 |          6 |          0 |          7 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\mdb.css                                              | CSS        |      9,121 |        237 |      1,458 |     10,816 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\mdb.min.css                                          | CSS        |          5 |         36 |          0 |         41 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\modules\animations-extended.css                      | CSS        |      2,110 |         16 |        199 |      2,325 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\modules\animations-extended.min.css                  | CSS        |          1 |          6 |          0 |          7 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\style.css                                            | CSS        |          0 |          1 |          1 |          2 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\css\style.min.css                                        | CSS        |          0 |          0 |          1 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\datatables-select.js                           | JavaScript |        719 |        266 |        196 |      1,181 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\datatables-select.min.js                       | JavaScript |          1 |          4 |          1 |          6 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\datatables.js                                  | JavaScript |      6,463 |      7,026 |      2,012 |     15,501 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\datatables.min.js                              | JavaScript |          3 |          0 |          0 |          3 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\imagesloaded.pkgd.min.js                       | JavaScript |          1 |          5 |          1 |          7 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\jquery.zmd.hierarchical-display.js             | JavaScript |        128 |         14 |         34 |        176 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\jquery.zmd.hierarchical-display.min.js         | JavaScript |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\masonry.pkgd.min.js                            | JavaScript |          1 |          7 |          1 |          9 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\progressBar.js                                 | JavaScript |         28 |          0 |          4 |         32 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\progressBar.min.js                             | JavaScript |          4 |          0 |          0 |          4 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\rating.js                                      | JavaScript |         96 |          6 |         19 |        121 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\addons\rating.min.js                                  | JavaScript |          8 |          0 |          0 |          8 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\bootstrap.js                                          | JavaScript |      3,262 |        332 |        842 |      4,436 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\bootstrap.min.js                                      | JavaScript |          1 |          6 |          0 |          7 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\jquery-3.4.1.min.js                                   | JavaScript |          1 |          1 |          1 |          3 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\mdb.js                                                | JavaScript |      7,911 |      1,418 |      1,604 |     10,933 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\mdb.min.js                                            | JavaScript |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\datatables-select.js                   | JavaScript |        719 |        266 |        196 |      1,181 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\datatables-select.min.js               | JavaScript |          1 |          4 |          1 |          6 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\datatables.js                          | JavaScript |      6,463 |      7,026 |      2,012 |     15,501 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\datatables.min.js                      | JavaScript |          3 |          0 |          0 |          3 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\imagesloaded.pkgd.min.js               | JavaScript |          1 |          5 |          1 |          7 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\jquery.zmd.hierarchical-display.js     | JavaScript |        128 |         14 |         34 |        176 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\jquery.zmd.hierarchical-display.min.js | JavaScript |          1 |          0 |          0 |          1 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\masonry.pkgd.min.js                    | JavaScript |          1 |          7 |          1 |          9 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\progressBar.js                         | JavaScript |         28 |          0 |          4 |         32 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\progressBar.min.js                     | JavaScript |          4 |          0 |          0 |          4 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\rating.js                              | JavaScript |         96 |          6 |         19 |        121 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\addons\rating.min.js                          | JavaScript |          8 |          0 |          0 |          8 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\bs-custom-file-input.js                       | JavaScript |        134 |          6 |         34 |        174 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\buttons.js                                    | JavaScript |         65 |          0 |          9 |         74 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\cards.js                                      | JavaScript |         59 |          2 |          5 |         66 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\chart.js                                      | JavaScript |     10,165 |      2,134 |      2,158 |     14,457 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\chips.js                                      | JavaScript |        444 |          1 |         79 |        524 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\collapsible.js                                | JavaScript |        112 |          0 |         18 |        130 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\dropdown.js                                   | JavaScript |        277 |         19 |         59 |        355 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\enhanced-modals.js                            | JavaScript |         18 |          5 |          5 |         28 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\forms-free.js                                 | JavaScript |        143 |          1 |         29 |        173 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\jarallax-video.js                             | JavaScript |        995 |        118 |        197 |      1,310 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\jarallax.js                                   | JavaScript |        790 |        132 |        181 |      1,103 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\jquery.easing.js                              | JavaScript |        132 |         70 |          3 |        205 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\jquery.easypiechart.js                        | JavaScript |        234 |         82 |         49 |        365 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\jquery.sticky.js                              | JavaScript |         85 |         13 |         19 |        117 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\lightbox.js                                   | JavaScript |      1,531 |         31 |         46 |      1,608 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\material-select.js                            | JavaScript |        880 |          1 |        136 |      1,017 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\mdb-autocomplete.js                           | JavaScript |        191 |          1 |         37 |        229 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\picker-date.js                                | JavaScript |        838 |        267 |        284 |      1,389 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\picker-time.js                                | JavaScript |        628 |         80 |         88 |        796 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\picker.js                                     | JavaScript |        619 |        311 |        310 |      1,240 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\scrollbar.js                                  | JavaScript |          1 |          5 |          0 |          6 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\scrolling-navbar.js                           | JavaScript |         10 |          1 |          2 |         13 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\sidenav.js                                    | JavaScript |        511 |          3 |         62 |        576 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\smooth-scroll.js                              | JavaScript |         16 |          0 |          4 |         20 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\toastr.js                                     | JavaScript |        346 |         15 |         55 |        416 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\treeview.js                                   | JavaScript |          9 |          0 |          2 |         11 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\velocity.js                                   | JavaScript |          1 |          5 |          0 |          6 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\waves.js                                      | JavaScript |        387 |         81 |        135 |        603 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\modules\wow.js                                        | JavaScript |        142 |          0 |         67 |        209 |
+| e:\random Projects 2\hackathons\WBoard\public\lib\js\popper.min.js                                         | JavaScript |          1 |          4 |          1 |          6 |
+| e:\random Projects 2\hackathons\WBoard\views\dashboard.ejs                                                 | HTML       |        119 |          8 |          8 |        135 |
+| e:\random Projects 2\hackathons\WBoard\views\home.ejs                                                      | HTML       |         57 |          3 |          6 |         66 |
+| e:\random Projects 2\hackathons\WBoard\views\landing.ejs                                                   | HTML       |        208 |         40 |         29 |        277 |
+| e:\random Projects 2\hackathons\WBoard\views\testing.ejs                                                   | HTML       |        128 |          9 |          8 |        145 |
+| e:\random Projects 2\hackathons\WBoard\views\waiting.ejs                                                   | HTML       |         23 |          0 |          0 |         23 |
+| Total                                                                                                      |            |     70,327 |     20,278 |     14,133 |    104,738 |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

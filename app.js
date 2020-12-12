@@ -11,11 +11,13 @@ app.get("/",(req,res)=>{
 app.get("/home",(req,res)=>{
     res.render("dashboard");
 });
-app.get("/waiting",(req,res)=>{
-    res.render("waiting");
+app.get("/waiting/:meetingId",(req,res)=>{
+    const id = req.params.meetingId;
+    res.render("waiting",{meetingId : id});
 });
-app.get("/board",(req,res)=>{
-    res.render("testing");
+app.get("/board/:meetingId",(req,res)=>{
+    const id = req.params.meetingId;
+    res.render("testing",{meetingId : id});
 });
 
 app.listen(4100,()=>{
