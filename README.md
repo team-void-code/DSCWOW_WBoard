@@ -1,9 +1,9 @@
 # DSCWOW_WBoard
 ---
 # Team Void Members
-- Ashhar Ali 
-- Purujeet Singh
-- Siddhant Sharma
+- Ashhar Ali (https://github.com/nerdynerd09)
+- Purujeet Singh (https://github.com/puru-exe)
+- Siddhant Sharma (https://github.com/siddastic)
  
  # About 
   
