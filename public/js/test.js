@@ -12,11 +12,11 @@ const mainBoard = new WhiteBoard((canvas) => {
     canvas.width = window.innerWidth * 0.4;
     canvas.height = window.innerWidth * 0.4;
     document.querySelector("#canvasContainer").appendChild(canvas);
-}, null, function onPaintEnd() {
+}, function onPaintEnd() {
     document.querySelectorAll("img").forEach((e) => {
         e.src = mainBoard.board.toDataURL();
     });
-}, options);
+}, null, options);
 
 const setDrawOption = (option, uiItem) => {
     if (!uiItem.classList.contains("selected")) {
