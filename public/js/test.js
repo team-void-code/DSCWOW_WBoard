@@ -16,7 +16,6 @@ const mainBoard = new WhiteBoard((canvas) => {
     dbRef.child("data/" + firebase.auth().currentUser.uid).update({
         img: mainBoard.board.toDataURL(),
         author: firebase.auth().currentUser.displayName,
-        // uid : firebase.auth().currentUser.uid
     });
     // document.querySelectorAll("img").forEach((e) => {
     //     e.src = mainBoard.board.toDataURL();
@@ -72,8 +71,10 @@ const clearBoard = () => {
     const m = confirm("Wanted to clear board?");
     if (m) {
         mainBoard.ctx.clearRect(0, 0, mainBoard.board.width, mainBoard.board.height);
-        document.querySelectorAll("img").forEach((e) => {
-            e.src = mainBoard.board.toDataURL();
+        dbRef.child("data/" + firebase.auth().currentUser.uid).update({
+            img: mainBoard.board.toDataURL(),
+            author: firebase.auth().currentUser.displayName,
+            // uid : firebase.auth().currentUser.uid
         });
     }
 }
@@ -153,6 +154,11 @@ dbRef.once("value", snap => {
     });
 });
 
-// const leaveMeeting = () => {
-//     dbRef.child(firebase.auth().currentUser.uid);
-// }
+const leaveMeeting = () => {
+    const m = confirm("Are your sure to leave meeting ?");
+    if (m) {
+        dbRef.child("data/" + firebase.auth().currentUser.uid).set({}).then(() => {
+            location.replace("/home");
+        });
+    }
+}
