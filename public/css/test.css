@@ -1,0 +1,108 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    /* display: none; */
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #EA72FF;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+}
+
+body {
+    background-color: black;
+    color: white;
+    max-height: 100vh;
+    font-family: Montserrat, sans-serif;
+}
+
+main {
+    display: flex;
+    background-color: #090C2A;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: 98vw;
+    height: 98vh;
+}
+
+#editItems {
+    background-color: #131942;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1%;
+    border-radius: 20px;
+    /* width: 200px; */
+    padding: 2.5%;
+    /* height: 100%; */
+    min-height: 85vh;
+}
+
+.feather {
+    /* padding: 15%; */
+    border-radius: 5px;
+    color: #353D6C;
+    width: 2em;
+    height: 2em;
+}
+
+.card-body{
+    background-color: #353D6C !important;
+}
+.hostText{
+    color: #EA72FF;
+}
+.selected {
+    color: #EA72FF;
+}
+
+#canvasImage {
+    /* min-height: 85vh; */
+    padding: 5%;
+    border-radius: 25px;
+    /* background-image: url("https://www.creativefabrica.com/wp-content/uploads/2020/06/13/Geometric-Colorful-Background-Graphics-4353529-1-1-580x386.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+canvas {
+    background-color: #BCC0DF;
+    background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+    /* height: 75vh;
+    width: 60vw; */
+    /* cursor: pointer; */
+}
+
+#otherParticipants {
+    background-color: #212752;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    margin-right: 1%;
+    border-radius: 20px;
+    width: 400px;
+    padding: 2.5%;
+    /* height: 100%; */
+    min-height: 85vh;
+    max-height: 85vh;
+    overflow-y: scroll;
+}

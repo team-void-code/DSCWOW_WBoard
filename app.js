@@ -9,8 +9,8 @@ app.get("/",(req,res)=>{
     res.render("landing");
 });
 
-app.get("/auth",(req,res)=>{
-    res.render("");
+app.get("/test",(req,res)=>{
+    res.render("testing");
 });
 app.get("/home",(req,res)=>{
     res.render("home");
