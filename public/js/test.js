@@ -119,3 +119,11 @@ for (let i in [...Array(5)]) {
 document.querySelectorAll("img").forEach(elem => {
     elem.src = "/images/loading.gif";
 });
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        document.querySelector("#user-image").innerHTML = `<img src = '${user.photoURL}' style = 'width : 40px;height : 40px;border-radius : 50%;'/>`;
+    } else {
+
+    }
+});

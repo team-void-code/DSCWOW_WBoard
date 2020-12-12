@@ -34,7 +34,9 @@
     <center>
         <main>
             <section id="menuItems" class="animated-elevation">
-                <i data-feather="user" class="animate__animated animate__zoomIn"></i>
+                <div id="user-image">
+                    <i data-feather="user" class="animate__animated animate__bounceIn"></i>
+                </div>
                 <br>
                 <i data-feather="log-out" style="color: red;" onclick="logout()"></i>
             </section>
@@ -114,6 +116,7 @@
 
             // document.querySelector("#username").innerHTML = `Welcome ${user.displayName}`;
             typeWrite(user.displayName,document.querySelector("#username"));
+            document.querySelector("#user-image").innerHTML = `<img src = '${user.photoURL}' style = 'width : 40px;height : 40px;border-radius : 50%;'/>`;
             document.querySelector(".loggedIn").style.display = "flex";
             document.querySelector(".loggedOut").style.display = "none";
 
