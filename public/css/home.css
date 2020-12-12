@@ -1,0 +1,124 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    /* display: none; */
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #EA72FF;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+}
+
+body {
+    background-color: black;
+    color: white;
+    max-height: 100vh;
+    font-family: Montserrat, sans-serif;
+    user-select: none;
+}
+
+main {
+    display: flex;
+    background-color: #090C2A;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: 98vw;
+    height: 98vh;
+}
+.animated-elevation{
+    box-shadow: 0 1px 30px rgba(0,0,0,0.12), 0 1px 20px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.animated-elevation:hover{
+    box-shadow: 0 14px 280px rgba(0,0,0,0.25), 0 10px 100px rgba(0,0,0,0.22);
+}
+#menuItems {
+    background-color: #131942;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* margin-left: 1%; */
+    border-radius: 100px;
+    /* width: 200px; */
+    padding: 2.5%;
+    /* height: 100%; */
+    min-height: 85vh;
+}
+
+.feather {
+    /* padding: 15%; */
+    border-radius: 5px;
+    color: #353D6C;
+    width: 2em;
+    height: 2em;
+}
+
+.card-body{
+    background-color: #353D6C !important;
+}
+.modal-header{
+    background-color:  #090C2A;
+    border:none;
+}
+.modal-body{
+    background-color:  #131942;
+}
+.modal-body img{
+    display: none;
+}
+#loadingContent{
+    min-width: 85vw;
+    min-height: 85vh;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #212752;
+    border-radius: 20px;
+}
+#mainContent{
+    min-width: 85vw;
+    min-height: 85vh;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #212752;
+    border-radius: 20px;
+}
+#loggedOutContent{
+    min-width: 85vw;
+    min-height: 85vh;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #212752;
+    border-radius: 20px;
+}
+#join-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

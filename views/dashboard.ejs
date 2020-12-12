@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900">
+    <!-- Bootstrap core CSS -->
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/lib/css/mdb.min.css" rel="stylesheet">
+    <title>Home | WBoard</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        canvas {
+            /* border: 2px solid black; */
+            border-radius: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <header></header>
+    <center>
+        <main>
+            <section id="menuItems" class="animated-elevation">
+                <i data-feather="user" class="animate__animated animate__zoomIn"></i>
+                <br>
+                <i data-feather="log-out" style="color: red;" onclick="logout()"></i>
+            </section>
+            <section id="loadingContent">
+                <h1>Loading...</h1>
+            </section>
+            <section id="mainContent" class="loggedIn" style="display:none">
+                <h1>Hi <span id="username"></span></h1>
+                <h4 style="color: gray;">Create or join a collaborated meeting</h4>
+                <br>
+                <hr width="100%">
+                <h2>Join A Meeting</h2>
+                <div id="join-row">
+                    <div class="md-form">
+                        <input type="text" id="form1" class="form-control">
+                        <label for="form1" class="">Meeting Code</label>
+                    </div>
+                    <button type="button" class="btn btn-outline-success btn-rounded waves-effect"
+                        style="height: min-content">Join</button>
+                </div>
+                <hr width="100%">
+                <h2>Create New Meeting</h2>
+                <br>
+                <div id="join-row">
+                    <div onclick="createMeeting()" class="card waves-effect"
+                        style="background-color: transparent;width: 200px;height: 200px;display: flex;justify-content: space-evenly;align-items: center;">
+                        <i data-feather="plus"></i>
+                        Create a Meeting
+                    </div>
+                </div>
+            </section>
+            <section id="loggedOutContent" class="loggedOut" style="display:none">
+                <button type="button" class="btn btn-outline-info btn-rounded waves-effect"
+                    style="height: min-content" onclick="login()">Continue with Google</button>
+            </section>
+        </main>
+    </center>
+</body>
+<script type="text/javascript" src="/lib/js/jquery-3.4.1.min.js"></script>
+<!--  Bootstrap tooltips  -->
+<script type="text/javascript" src="/lib/js/popper.min.js"></script>
+<!--  Bootstrap core JavaScript  -->
+<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+<!--  MDB core JavaScript  -->
+<script type="text/javascript" src="/lib/js/mdb.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCkVNy6THFaMxgQKiT7RGEIPqdyBJnXVVM",
+        authDomain: "wboard-605c1.firebaseapp.com",
+        projectId: "wboard-605c1",
+        storageBucket: "wboard-605c1.appspot.com",
+        messagingSenderId: "651015846008",
+        appId: "1:651015846008:web:b92b361d1b7212de31558d",
+        measurementId: "G-HEM8Z819S2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script>
+    firebase.auth().onAuthStateChanged((user) => {
+        document.querySelector("#loadingContent").style.display = "none";
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            var uid = user.uid;
+
+            // document.querySelector("#username").innerHTML = `Welcome ${user.displayName}`;
+            typeWrite(user.displayName,document.querySelector("#username"));
+            document.querySelector(".loggedIn").style.display = "flex";
+            document.querySelector(".loggedOut").style.display = "none";
+
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            document.querySelector(".loggedIn").style.display = "none";
+            document.querySelector(".loggedOut").style.display = "flex";
+        }
+    });
+</script>
+<script src="/js/auth.js"></script>
+<script src="/js/home.js"></script>
+
+</html>

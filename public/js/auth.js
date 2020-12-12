@@ -19,3 +19,11 @@ const login = () => {
         // ...
     });
 }
+
+
+const logout = () => {
+    const m = confirm("Sure to logout?");
+    if(m){
+        firebase.auth().signOut();
+    }
+}

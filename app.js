@@ -8,12 +8,14 @@ app.use(express.static("public"));
 app.get("/",(req,res)=>{
     res.render("landing");
 });
-
+app.get("/home",(req,res)=>{
+    res.render("dashboard");
+});
+app.get("/waiting",(req,res)=>{
+    res.render("waiting");
+});
 app.get("/board",(req,res)=>{
     res.render("testing");
-});
-app.get("/home",(req,res)=>{
-    res.render("home");
 });
 
 app.listen(4100,()=>{
