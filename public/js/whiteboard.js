@@ -3,7 +3,7 @@ class WhiteBoard {
      * 
      * @param {Function} onCreate
      */
-    constructor(onCreate) {
+    constructor(onCreate,onPaint,onPaintEnd,optionsObject) {
         const canvas = document.createElement("canvas");
         let painting = false;
         let prevX = 0,
@@ -20,10 +20,11 @@ class WhiteBoard {
             ctx.beginPath();
             ctx.moveTo(prevX, prevY);
             ctx.lineTo(currX, currY);
-            ctx.strokeStyle = x;
+            ctx.strokeStyle = optionsObject.paintColor;
             ctx.lineWidth = y;
             ctx.stroke();
             ctx.closePath();
+            if(onPaint) onPaint();
         }
 
         function findxy(res, e) {
@@ -35,9 +36,9 @@ class WhiteBoard {
 
                 painting = true;
                 dot_flag = true;
-                if (dot_flag) {
+                if (dot_flag && optionsObject.editMode) {
                     ctx.beginPath();
-                    ctx.fillStyle = x;
+                    ctx.fillStyle = optionsObject.paintColor;
                     ctx.fillRect(currX, currY, 2, 2);
                     ctx.closePath();
                     dot_flag = false;
@@ -45,9 +46,10 @@ class WhiteBoard {
             }
             if (res == 'up' || res == "out") {
                 painting = false;
+                if(onPaintEnd && optionsObject.editMode) onPaintEnd();
             }
             if (res == 'move') {
-                if (painting) {
+                if (painting && optionsObject.editMode) {
                     prevX = currX;
                     prevY = currY;
                     currX = e.clientX - canvas.offsetLeft;
@@ -66,9 +68,9 @@ class WhiteBoard {
         canvas.addEventListener("mouseup", function (e) {
             findxy('up', e)
         }, false);
-        canvas.addEventListener("mouseout", function (e) {
-            findxy('out', e)
-        }, false);
+        // canvas.addEventListener("mouseout", function (e) {
+        //     findxy('out', e)
+        // }, false);
         this.board = canvas;
     }
 

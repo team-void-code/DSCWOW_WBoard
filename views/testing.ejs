@@ -36,9 +36,12 @@
             <section id="editItems">
                 <i data-feather="home" class="animate__animated animate__zoomIn"></i>
                 <br>
-                <i data-feather="mouse-pointer" class="animate__animated animate__bounceIn selected"></i>
-                <i data-feather="edit-2" class="animate__animated animate__bounceIn"></i>
-                <i data-feather="chrome" class="animate__animated animate__bounceIn"></i>
+                <i data-whiteboard-option data-feather="mouse-pointer"
+                    class="animate__animated animate__bounceIn selected" onclick="setDrawOption('mouse',this);"> </i>
+                <i data-whiteboard-option data-feather="edit-2" class="animate__animated animate__bounceIn"
+                    onclick="setDrawOption('edit',this)"></i>
+                <i data-whiteboard-option data-feather="chrome" class="animate__animated animate__bounceIn"
+                    onclick="setDrawOption('color',this)"></i>
                 <br>
                 <i data-feather="power" style="color: red;"></i>
             </section>
