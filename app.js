@@ -19,7 +19,9 @@ app.get("/board/:meetingId",(req,res)=>{
     const id = req.params.meetingId;
     res.render("board",{meetingId : id});
 });
-
+app.get("*",(req,res)=>{
+    res.render("404");
+});
 app.listen(4100,()=>{
     console.log("Server started at http://localhost:4100");
 });

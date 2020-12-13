@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <title>404 Page Not Found</title>
+    <style>
+        body{
+            background-color: #090C2A;
+            color: #EA72FF;
+            padding: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #131942;
+            min-width: 100vh;
+            min-height: 70vh;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>404 Page Not Found</h1>
+        <h4 style="color: gray;font-weight: 300;">Click anywhere to visit back homepage</h4>
+        <br>
+        <br>
+        <img src="/images/guy.gif">
+    </div>
+</body>
+<script>
+    window.onclick = () => {
+        window.location.replace("/");
+    }
+</script>
+</html>

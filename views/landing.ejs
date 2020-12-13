@@ -286,8 +286,8 @@
         <!-- Copyright -->
         <div class="footer-copyright py-3 text-center wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">
-                © 2020 Copyright: <a href="/">
-                    localhost:4100 </a>
+                © 2020 Copyright: <a href="/" id="website_origin">
+                    </a>
             </div>
         </div>
         <!-- Copyright -->
@@ -305,6 +305,7 @@
     <script>
         // Animation init
         new WOW().init();
+        document.querySelector("#website_origin").innerHTML = location.origin.split("://")[1];
     </script>
 </body>
 
