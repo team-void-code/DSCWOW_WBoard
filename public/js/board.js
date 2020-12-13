@@ -107,7 +107,8 @@ firebase.auth().onAuthStateChanged((user) => {
         
             dbRef.on("value", (snapshot) => {
                 const value = snapshot.val()["data"];
-                if (value[firebase.auth().currentUser.uid]["kicked"]) {
+                console.log(value);
+                if (value[firebase.auth().currentUser.uid] && value[firebase.auth().currentUser.uid]["kicked"]) {
                     document.querySelector("#editItems").style.opacity = "0";
                     if (kickedOutInThisSession == 0) {
                         $("#userKickedModal").modal("show");
