@@ -128,7 +128,7 @@ dbRef.once("value", snap => {
                 if (value[i]["kicked"]) {
                     cardText = `<p class="card-text">${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-success" onclick = "addUser('${i}','${value[i]["author"]}')">Add Back</button>` : ''}</p>`;
                 } else {
-                    cardText = `<p class="card-text">${i != firebase.auth().currentUser.uid ? `<button class = "btn btn-info" onclick = "copyToMyCanvas('${value[i]['img']}')">Copy</button>` : ''} ${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-warning" onclick = "kickOut('${i}','${value[i]["author"]}')">Kick</button>` : ''}</p>`;
+                    cardText = `<p class="card-text"><button class = "btn btn-info" onclick = "copyToMyCanvas('${value[i]['img']}')">Copy</button> ${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-warning" onclick = "kickOut('${i}','${value[i]["author"]}')">Kick</button>` : ''}</p>`;
                 }
                 const image = `<div class="view view-cascade overlay zoom">
                 <img class="card-img-top"
