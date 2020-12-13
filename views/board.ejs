@@ -111,8 +111,8 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="fileInputModal" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="fileInputModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -123,7 +123,7 @@
                     </div>
                     <div class="modal-body">
                         <form class="range-field my-4 w-100">
-                            <input type="file" id="fileinput" accept = "image/*">
+                            <input type="file" id="fileinput" accept="image/*">
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -165,6 +165,12 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
+    firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+            location.replace("/home");
+        }
+    });
 </script>
 <script>
     const meetingId = "<%= meetingId %>";
