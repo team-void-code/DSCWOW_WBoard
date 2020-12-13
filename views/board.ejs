@@ -66,7 +66,7 @@
 
                 <div class="animate__animated animate__fadeInUp" id="participantCards">
                     <br><br>
-
+                    Loading...
                 </div>
             </section>
         </main>
@@ -95,7 +95,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Pen Thickness</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Pen/Eraser Thickness</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="fileInputModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="kickOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -128,6 +128,57 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success">Draw Image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="clearCanvasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sure to clear board?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-warning" data-dismiss="modal" onclick="eraseAllFromBoard()">Sure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="userKickedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Host have Kicked you out of meeting</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your Controls are disabled since you are kicked out by host. They will be re-enabled when
+                            host adds you back in.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="leaveMeetingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are your sure to leave meeting ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        <button class="btn" data-dismiss="modal" onclick="exit()">Leave</button>
                     </div>
                 </div>
             </div>

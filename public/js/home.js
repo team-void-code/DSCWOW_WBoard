@@ -16,6 +16,7 @@ const typeWrite = (txt,elem) => {
 }
 
 const createMeeting = () => {
+    $("#createMeetingModal").modal("show");
     const meetingId = db.ref("/meetings").push().key;
     db.ref(`/meetings/${meetingId}`).update({
         createdBy : firebase.auth().currentUser.uid,
@@ -27,12 +28,14 @@ const createMeeting = () => {
 
 const joinMeeting = () => {
     const id = document.querySelector("#form1").value;
+    $("#joiningMeetingModal").modal("show");
     if(id.length > 0){
         db.ref(`/meetings/${id}`).once("value",(snapshot)=>{
             if(snapshot.val() != null){
                 location.href = `/board/${id}`;
             }else{
-                alert("Wrong meeting code");
+                $("#joiningMeetingModal").modal("hide");
+                $("#wrongMeetingCodeModal").modal("show");
             }
         });
     }
