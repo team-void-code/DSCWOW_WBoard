@@ -100,83 +100,84 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         document.querySelector("#editItems").style.opacity = "1";
         document.querySelector("#user-image").innerHTML = `<img src = '${user.photoURL}' style = 'width : 40px;height : 40px;border-radius : 50%;'/>`;
-    }
-});
-dbRef.once("value", snap => {
-    const val = snap.val();
-    authorId = val["createdBy"];
 
-    dbRef.on("value", (snapshot) => {
-        const value = snapshot.val()["data"];
-        if (value[firebase.auth().currentUser.uid]["kicked"]) {
-            document.querySelector("#editItems").style.opacity = "0";
-            if (kickedOutInThisSession == 0) {
-                $("#userKickedModal").modal("show");
-                options.editMode = false;
-                kickedOutInThisSession++;
-            }
-        } else {
-            document.querySelector("#editItems").style.opacity = "1";
-            kickedOutInThisSession = 0;
-        }
-        if (typeof value == "object") {
-            // console.log(value);
-            document.querySelector("#participantCards").innerHTML = "";
-            for (let i in value) {
-                // console.log(value[i]);
-                let cardText;
-                if (value[i]["kicked"]) {
-                    cardText = `<p class="card-text">${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-success" onclick = "addUser('${i}','${value[i]["author"]}')">Add Back</button>` : ''}</p>`;
+        dbRef.once("value", snap => {
+            const val = snap.val();
+            authorId = val["createdBy"];
+        
+            dbRef.on("value", (snapshot) => {
+                const value = snapshot.val()["data"];
+                if (value[firebase.auth().currentUser.uid]["kicked"]) {
+                    document.querySelector("#editItems").style.opacity = "0";
+                    if (kickedOutInThisSession == 0) {
+                        $("#userKickedModal").modal("show");
+                        options.editMode = false;
+                        kickedOutInThisSession++;
+                    }
                 } else {
-                    cardText = `<p class="card-text"><button class = "btn btn-info" onclick = "copyToMyCanvas('${value[i]['img']}')">Copy</button> ${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-warning" onclick = "kickOut('${i}','${value[i]["author"]}')">Kick</button>` : ''}</p>`;
+                    document.querySelector("#editItems").style.opacity = "1";
+                    kickedOutInThisSession = 0;
                 }
-                const image = `<div class="view view-cascade overlay zoom">
-                <img class="card-img-top"
-                    src="${value[i]['img'] != undefined ? value[i]['img'] : 'http://localhost:4100/images/loading.gif'}"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>`;
-                const participantTemplate = `<!-- Card Wider -->
-                <div class="card card-cascade wider mb-4" data-whiteboard-id = ${i}>
-                
-                    <!-- Card image -->
-                    ${value[i]["kicked"] ? '' : image}
-                    
-                
-                    <!--Card content -->
-                    <div class="card-body card-body-cascade text-center">
-
-                        <!-- Title -->
-                        <h4 class="card-title"><strong style="font-weight: 300;">${value[i]["author"]}</strong></h4>
-                        <!-- Subtitle -->
-                        <h5 class="pb-2 hostText"><strong>${authorId == i ? 'Host' : 'Attendee'}</strong></h5>
-                        <!-- Text -->
-                        ${cardText}
-                        <!-- Linkedin -->
-                        <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
-                        <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
-                        <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
-                        <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
-                        <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
-
-                    </div>
-                
-                </div >
-                <!-- Card Wider--> `;
-                if (authorId == firebase.auth().currentUser.uid && value[i]["kicked"]) {
-                    document.querySelector("#participantCards").innerHTML += participantTemplate;
+                if (typeof value == "object") {
+                    // console.log(value);
+                    document.querySelector("#participantCards").innerHTML = "";
+                    for (let i in value) {
+                        // console.log(value[i]);
+                        let cardText;
+                        if (value[i]["kicked"]) {
+                            cardText = `<p class="card-text">${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-success" onclick = "addUser('${i}','${value[i]["author"]}')">Add Back</button>` : ''}</p>`;
+                        } else {
+                            cardText = `<p class="card-text"><button class = "btn btn-info" onclick = "copyToMyCanvas('${value[i]['img']}')">Copy</button> ${authorId == firebase.auth().currentUser.uid && i != firebase.auth().currentUser.uid ? `<button class = "btn btn-warning" onclick = "kickOut('${i}','${value[i]["author"]}')">Kick</button>` : ''}</p>`;
+                        }
+                        const image = `<div class="view view-cascade overlay zoom">
+                        <img class="card-img-top"
+                            src="${value[i]['img'] != undefined ? value[i]['img'] : 'http://localhost:4100/images/loading.gif'}"
+                            alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>`;
+                        const participantTemplate = `<!-- Card Wider -->
+                        <div class="card card-cascade wider mb-4" data-whiteboard-id = ${i}>
+                        
+                            <!-- Card image -->
+                            ${value[i]["kicked"] ? '' : image}
+                            
+                        
+                            <!--Card content -->
+                            <div class="card-body card-body-cascade text-center">
+        
+                                <!-- Title -->
+                                <h4 class="card-title"><strong style="font-weight: 300;">${value[i]["author"]}</strong></h4>
+                                <!-- Subtitle -->
+                                <h5 class="pb-2 hostText"><strong>${authorId == i ? 'Host' : 'Attendee'}</strong></h5>
+                                <!-- Text -->
+                                ${cardText}
+                                <!-- Linkedin -->
+                                <!--                            <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>-->
+                                <!--                            &lt;!&ndash; Twitter &ndash;&gt;-->
+                                <!--                            <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>-->
+                                <!--                            &lt;!&ndash; Dribbble &ndash;&gt;-->
+                                <!--                            <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>-->
+        
+                            </div>
+                        
+                        </div >
+                        <!-- Card Wider--> `;
+                        if (authorId == firebase.auth().currentUser.uid && value[i]["kicked"]) {
+                            document.querySelector("#participantCards").innerHTML += participantTemplate;
+                        }
+                        else if (!value[i]["kicked"]) {
+                            document.querySelector("#participantCards").innerHTML += participantTemplate;
+                        }
+                    }
                 }
-                else if (!value[i]["kicked"]) {
-                    document.querySelector("#participantCards").innerHTML += participantTemplate;
-                }
-            }
-        }
-    });
-    dbRef.on("child_removed", (snapshot) => {
-        console.log(snapshot.val());
-    });
+            });
+            dbRef.on("child_removed", (snapshot) => {
+                console.log(snapshot.val());
+            });
+        });
+    }
 });
 
 const leaveMeeting = () => {
