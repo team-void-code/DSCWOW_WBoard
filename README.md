@@ -19,3 +19,8 @@ App's Live Demo - https://wboard-online.herokuapp.com
  - ```npm install```
  - ```npm start```
  - Now open your favourite browser and run _localhost:4100_
+ 
+ 
+ ## PS 
+ 
+We have added **Kick** and **Copy** functionality after we recorded the video so kindly check them out.
