@@ -4,7 +4,7 @@ new WOW().init();
 const options = {
     editMode: false,
     paintColor: "#ff6347",
-    thickness: 2,
+    thickness: 3,
     erasing: false
 };
 
@@ -107,7 +107,7 @@ dbRef.once("value", snap => {
     dbRef.on("value", (snapshot) => {
         const value = snapshot.val()["data"];
         if (typeof value == "object") {
-            console.log(value);
+            // console.log(value);
             document.querySelector("#participantCards").innerHTML = "";
             for (let i in value) {
                 // console.log(value[i]);
@@ -119,7 +119,7 @@ dbRef.once("value", snap => {
                         <img class="card-img-top"
                             src="${value[i]['img'] != undefined ? value[i]['img'] : 'http://localhost:4100/images/loading.gif'}"
                             alt="Card image cap">
-                        <a href="#!">
+                        <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
@@ -161,4 +161,29 @@ const leaveMeeting = () => {
             location.replace("/home");
         });
     }
+}
+let reader = null;
+document.querySelector("input[type=file]").addEventListener("change", (e) => {
+    let file = e.target.files[0];
+    reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onloadend = function (e) {
+        var image = new Image();
+        image.src = e.target.result;
+        image.onload = function (ev) {
+            var canvas = document.querySelector('canvas');
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0);
+            dbRef.child("data/" + firebase.auth().currentUser.uid).update({
+                img: mainBoard.board.toDataURL(),
+                author: firebase.auth().currentUser.displayName,
+                // uid : firebase.auth().currentUser.uid
+            });
+        }
+    }
+});
+const startImage = () => {
+    // $("#fileInputModal").modal("show");
+    document.querySelector("input[type=file]").click();
 }

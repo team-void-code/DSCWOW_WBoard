@@ -28,6 +28,12 @@ const createMeeting = () => {
 const joinMeeting = () => {
     const id = document.querySelector("#form1").value;
     if(id.length > 0){
-        location.href = `/board/${id}`;
+        db.ref(`/meetings/${id}`).once("value",(snapshot)=>{
+            if(snapshot.val() != null){
+                location.href = `/board/${id}`;
+            }else{
+                alert("Wrong meeting code");
+            }
+        });
     }
 }

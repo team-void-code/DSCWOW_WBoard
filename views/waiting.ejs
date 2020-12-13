@@ -16,7 +16,12 @@
         <h1 style="font-weight: 200;">Waiting room</h1>
         <h4 style="color: gray;font-weight: 300;">You can wait here for others to join</h4>
         <br>
-        <div>Meeting Code &emsp;<span style="color: #EA72FF;padding: 20px;border: 2px solid #EA72FF;user-select:all;"><%= meetingId%></span></div>
+        <div>Meeting Code &emsp;<input
+                style="color: #EA72FF;padding: 20px;border: 2px solid #EA72FF;user-select:all;outline: none;background-color: transparent;width: 20vw;"
+                value="<%= meetingId%>" readonly>
+            <button style="background-color: transparent;animation: none;box-shadow: none;border : 2px solid #EA72FF;"
+                onclick="copyMeetingId(this)">Copy</button>
+        </div>
         <br>
         <br>
         <br>
@@ -28,8 +33,21 @@
         <button onclick="location.href = '/board/<%= meetingId%>'">Continue to board</button>
     </main>
 </body>
-<!-- <script>
-    const meetingId = "<%= meetingId%>";
-    document.querySelector("#link").innerHTML = window.location.origin + "/board/" + meetingId;
-</script> -->
+<script>
+    const copyMeetingId = (elem) => {
+        var copyText = document.querySelector("input");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        elem.innerText = "Copied";
+        setTimeout(() => {
+            elem.innerText = "Copy";
+        }, 2000);
+    }
+</script>
+
 </html>

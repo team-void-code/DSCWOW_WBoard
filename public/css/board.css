@@ -81,9 +81,13 @@ main {
 .selected {
     color: #EA72FF;
 }
-.modal-header{
+.modal-header,.modal-footer{
     background-color:  #090C2A;
     border:none;
+}
+.modal-footer{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .modal-body{
     background-color:  #131942;

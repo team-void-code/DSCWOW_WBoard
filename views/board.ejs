@@ -30,7 +30,7 @@
             border-radius: 25px;
         }
     </style>
-    <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="/css/board.css">
 </head>
 
 <body>
@@ -52,6 +52,7 @@
                     onclick="setDrawOption('color',this)"></i>
                 <i data-whiteboard-option data-feather="feather" class="animate__animated animate__bounceIn"
                     onclick="setDrawOption('thick',this)"></i>
+                <i data-feather="image" class="animate__animated animate__bounceIn" onclick="startImage()"></i>
                 <i data-feather="trash" class="animate__animated animate__bounceIn" onclick="clearBoard()"></i>
                 <br>
                 <i data-feather="power" style="color: red;" onclick="leaveMeeting()"></i>
@@ -101,11 +102,32 @@
                     </div>
                     <div class="modal-body">
                         <form class="range-field my-4 w-100">
-                            <input type="range" step="0.1" style="width: 100%;" min="1" max="10" value="2"
+                            <input type="range" step="0.1" style="width: 100%;" min="1" max="20" value="3"
                                 oninput="document.querySelector('#markerThickness').innerHTML = this.value;"
                                 onchange="changeMarkerThickness(this.value)" />
                             <p>Thickness : <span id="markerThickness">2</span></p>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="fileInputModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Choose Image to open</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="range-field my-4 w-100">
+                            <input type="file" id="fileinput" accept = "image/*">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success">Draw Image</button>
                     </div>
                 </div>
             </div>
@@ -151,6 +173,6 @@
     let authorId = null;
 </script>
 <script src="/js/whiteboard.js"></script>
-<script src="/js/test.js"></script>
+<script src="/js/board.js"></script>
 
 </html>

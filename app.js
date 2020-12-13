@@ -17,7 +17,7 @@ app.get("/waiting/:meetingId",(req,res)=>{
 });
 app.get("/board/:meetingId",(req,res)=>{
     const id = req.params.meetingId;
-    res.render("testing",{meetingId : id});
+    res.render("board",{meetingId : id});
 });
 
 app.listen(4100,()=>{
