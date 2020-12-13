@@ -42,14 +42,15 @@
                     <i data-feather="user" class="animate__animated animate__bounceIn"></i>
                 </div>
                 <br>
-                <i data-feather="log-out" style="color: red;" onclick="logout()"></i>
+                <i data-feather="log-out" style="color: red;" onclick="logout()" id="logoutBtn"
+                    style="display: none;"></i>
             </section>
             <section id="loadingContent">
                 <h1>Loading...</h1>
             </section>
             <section id="mainContent" class="loggedIn" style="display:none">
                 <h1>Hi <span id="username"></span></h1>
-                <h4 style="color: gray;">Create or join a collaborated meeting</h4>
+                <h4 style="color: gray;">Join or create a collaborated meeting</h4>
                 <br>
                 <hr width="100%">
                 <h2>Join A Meeting</h2>
@@ -73,8 +74,8 @@
                 </div>
             </section>
             <section id="loggedOutContent" class="loggedOut" style="display:none">
-                <button type="button" class="btn btn-outline-info btn-rounded waves-effect"
-                    style="height: min-content" onclick="login()">Continue with Google</button>
+                <button type="button" class="btn btn-outline-info btn-rounded waves-effect" style="height: min-content"
+                    onclick="login()">Continue with Google</button>
             </section>
         </main>
     </center>
@@ -121,10 +122,12 @@
             var uid = user.uid;
 
             // document.querySelector("#username").innerHTML = `Welcome ${user.displayName}`;
-            typeWrite(user.displayName,document.querySelector("#username"));
-            document.querySelector("#user-image").innerHTML = `<img src = '${user.photoURL}' style = 'width : 40px;height : 40px;border-radius : 50%;'/>`;
+            typeWrite(user.displayName, document.querySelector("#username"));
+            document.querySelector("#user-image").innerHTML =
+                `<img src = '${user.photoURL}' style = 'width : 40px;height : 40px;border-radius : 50%;'/>`;
             document.querySelector(".loggedIn").style.display = "flex";
             document.querySelector(".loggedOut").style.display = "none";
+            document.querySelector("#logoutBtn").style.display = "block";
 
             // ...
         } else {
@@ -132,6 +135,7 @@
             // ...
             document.querySelector(".loggedIn").style.display = "none";
             document.querySelector(".loggedOut").style.display = "flex";
+            document.querySelector("#logoutBtn").style.display = "none";
         }
     });
 </script>

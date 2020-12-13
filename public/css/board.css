@@ -126,3 +126,17 @@ canvas {
     max-height: 85vh;
     overflow-y: scroll;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main{
+        flex-direction: column;
+        height: max-content;
+    }
+    #editItems{
+        flex-direction: row;
+        align-content: space-around;
+        min-width: 90vw;
+        min-height: max-content;
+    }
+}
